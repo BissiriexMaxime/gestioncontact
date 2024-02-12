@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Contacts{% endblock %}
+
+{% block body %}
+<h1 class='text-center pt-2'> Liste des Contacts </h1>
+
+<div class= 'row'
+{%for leContact in lesContacts %}
+<div class="card" style="width: 18rem;">
+
+  <img src="..." class="card-img-top" alt="...">
+    <h3 class="card-title">{{leContact.nom}} {{leContact.prénom}}</h3>
+    <image style="height : 200px; width :100%; display : block;"
+    <ul class ="list-group list-group-flush">
+        <li class = "list-group-item">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{% endblock %}
