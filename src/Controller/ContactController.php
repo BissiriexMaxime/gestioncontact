@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ContactController extends AbstractController
 {
     /**
-     * @Route("/contact", name="app_contact")
+     * @Route("/contact", name="app_contact", methods= ("GET"))
      */
     public function listeContacts(): Response
     {
