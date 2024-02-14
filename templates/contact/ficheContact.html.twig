@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des Contacts{% endblock %}
+{% block title %}leContact{% endblock %}
 
 {% block body %}
-<h1 class='text-center pt-2'> Liste des Contacts </h1>
+<h1 class='text-center pt-2'> leContact </h1>
 
 <div class= 'row'>
-{%for leContact in contacts %}
 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
 <div class="card" style="width: 18rem;">
 
@@ -25,9 +24,8 @@
             <span>Femme</span>
           {% endif %}
         </li>
-    <a href="{{path('ficheContact', {'id':leContact.id})}}" class="btn btn-primary btn-block text-center w-100 ">Afficher le contact</a>
+    <a href="{{path('contacts')}}" class="btn btn-primary btn-block text-center w-100 ">Revenir à la liste</a>
   </div>
 </div>
-{%endfor %}
 </div>
 {% endblock %}
