@@ -14,12 +14,13 @@ class ContactController extends AbstractController
      * @Route("/contacts", name="contacts", methods= {"GET"})
      */
    
-    public function listeContacts(ContactRepository $repo): Response
+    public function listeContacts(): Response
     {
 
-        /*$manager= $this->getDoctrine()->getManager();
-        $repo= $manager->getRepository(Contact::class);*/
+        $manager= $this->getDoctrine()->getManager();
+        $repo= $manager->getRepository(Contact::class);
         $listecontacts= $repo->findAll();
+        
         
 
         return $this->render('contact/listeContacts.html.twig', [
