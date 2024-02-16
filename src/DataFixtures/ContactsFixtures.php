@@ -31,7 +31,7 @@ class ContactsFixtures extends Fixture
         $categories[] = $categorie;
 
         $categorie = new Categorie();
-        $categorie->setlibelle('Sport')
+        $categorie->setlibelle('Privé')
                   ->setimage('https://picsum.photos/id/342/200/300')
                   ->setdescription($faker->sentence(50));
         $manager->persist($categorie);
@@ -49,6 +49,7 @@ class ContactsFixtures extends Fixture
         $contacts->setNom($faker->lastName())
                  ->setPrenom($faker->firstName($genre[$sexe]))
                  ->setsexe($sexe)
+                 ->setcategorie($categories[mt_rand(0,2)])
                  ->setRue( $faker->streetAddress())
                  ->setCp( $faker->numberBetween(33000,75000))
                  ->setVille($faker->city())
