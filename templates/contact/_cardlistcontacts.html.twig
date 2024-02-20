@@ -1,0 +1,32 @@
+<div class="card" style="width: 18rem;">
+
+  
+    <h3 class="card-title">{{leContact.nom}} {{leContact.prenom}}</h3>
+      <img src= {{leContact.avatar}} class="card-img-top avatar" alt="...">
+        <ul class ="list-group list-group-flush">
+          <li class = "list-group-item">{{leContact.rue}}</li>
+          <li class = "list-group-item">{{leContact.cp}}</li>
+          <li class = "list-group-item">{{leContact.ville}}</li>
+          <li class = "list-group-item">{{leContact.mail}}</li>
+          <li class = "list-group-item">
+        
+            {% if leContact.sexe==0 %}
+                    <span class='badge text-bg-info'>Homme</span>
+                {% else %}
+                    <span class='badge text-bg-warning'>Femme</span>
+            {% endif %}
+            </li>
+           
+                <li class="list-group-item"> 
+                    <a href="{{path('lacategorie', {'id': leContact.categorie.id})}}">
+                        {{leContact.categorie.libelle}}
+                    </a>
+                </li>
+                
+            
+       
+        <div class="card-body">
+            <a href="{{path('ficheContact', {'id': leContact.id})}}" class="btn btn-success btn-block text-center w-100">Détail ...</a>
+        </div>
+        </ul>
+    </div> 

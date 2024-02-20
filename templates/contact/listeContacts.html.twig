@@ -6,30 +6,15 @@
 <h1 class='text-center pt-2'> Liste des Contacts </h1>
 
 <div class= 'row'>
-{%for leContact in contacts %}
-<div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
-<div class="card" style="width: 18rem;">
+  {%for leContact in contacts %}
+    <div class="col-sm-12 col-md-12 col-lg-4 col-xl-3">
 
-  
-    <h3 class="card-title">{{leContact.nom}} {{leContact.prenom}}</h3>
-    <img src= {{leContact.avatar}} class="card-img-top avatar" alt="...">
-    <ul class ="list-group list-group-flush">
-        <li class = "list-group-item">{{leContact.rue}}</li>
-        <li class = "list-group-item">{{leContact.cp}}</li>
-        <li class = "list-group-item">{{leContact.ville}}</li>
-        <li class = "list-group-item">{{leContact.mail}}</li>
-        <li class = "list-group-item">
-    </ul>
-          {% if leContact.sexe == 0%}
-            <span>Homme</span>
-          {% else %}
-            <span>Femme</span>
-          {% endif %}
-        </li>
-        <li class= "list-group-item ">{{leContact.categorie.libelle}}</li>
-    <a href="{{path('ficheContact', {'id':leContact.id})}}" class="btn btn-primary btn-block text-center w-100 ">Afficher le contact</a>
-  </div>
-</div>
+    <div class="card" style="width: 18rem;">
+{{ include('contact/_cardlistcontacts.html.twig',{'mode':'listeContacts'})}}
+    </div>
+    </div>
 {%endfor %}
+
 </div>
+  
 {% endblock %}
